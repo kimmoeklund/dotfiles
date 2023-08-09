@@ -11,5 +11,6 @@ else
    require('personal-config')
    require('telescope-config')
    require('toggleterm-config')
-   require('copilot-config')
+   require('lsp-config')
+--   require('copilot-config')
 end

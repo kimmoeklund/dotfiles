@@ -61,8 +61,16 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
   use 'romgrk/barbar.nvim'
 
- -- use({'github/copilot.vim'})
-  use { "zbirenbaum/copilot.lua" }
+  use({'github/copilot.vim'})
+  --use { "zbirenbaum/copilot.lua" }
+
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+  
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
