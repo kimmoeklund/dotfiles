@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
 
   use({'github/copilot.vim'})
   --use { "zbirenbaum/copilot.lua" }
+  use({ "nvim-treesitter/nvim-treesitter" })
 
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   use {
@@ -70,8 +71,13 @@ return require('packer').startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
-  
-
+  use {
+    'andymass/vim-matchup',
+    setup = function()
+      -- may set any options here
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
